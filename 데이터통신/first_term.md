@@ -40,7 +40,7 @@
 3) **전이중(양방향) 모드** : 동시에 양방향으로 전송
 
 #### 프로토콜 참조모델(7계층)
-![alt text](image.png)
+![alt text](resources/image.png)
 
 
 #### 물리 계층
@@ -94,15 +94,15 @@
  2) 주기 : 반복되는 패턴(단위 초) | 주기 = 1 / 주파수Hz  
  3) 주파수 : 1초당 주기의 반복횟수(단위 Hz)   
 
-![alt text](image-6.png)
+![alt text](resources/image-6.png)
 
 <div style="page-break-before: always;"></div>
 
  #### 디지털 변환 기법
-![alt text](image-3.png)
+![alt text](resources/image-3.png)
  
  #### 아날로그 변환 기법
- ![alt text](image-4.png)
+ ![alt text](resources/image-4.png)
 
 <div style="page-break-before: always;"></div>
 
@@ -112,7 +112,7 @@
 
   **양자화 레벨이 높을수록 정밀도와 전송량이 증가한다**
 
-  ![alt text](image-5.png)
+  ![alt text](resources/image-5.png)
 
   #### 전송장애(전송오류)
   1) 신호감쇄
@@ -147,7 +147,7 @@
 3) 전송매체의 절단, 파괴 등의 장애
 4) 저속 전송매체로 데이터를 빠른속도로 무리하게 송신하는 경우
 
-![](image-7.png)
+![](resources/image-7.png)
 
 #### 프레임
 : 데이터 링크 계층에서 전송되는 전송 데이터 단위를 뜻함
@@ -160,14 +160,14 @@
 
 2) 2차원 Parity비트 검출법
  : 데이터를 (블록단위) 분할 후, 행과 열에 각각 비트를 추가하여 오류를 검출
- ![alt text](image-8.png)
+ ![alt text](resources/image-8.png)
 
 3) CheckSum (1Byte) 검출법
  : 데이터를 1 Byte단위로 XOR를 하여 CheckSum을 생성한 후 전송
- ![](image-9.png)
+ ![](resources/image-9.png)
 
 4) Internet CheckSum 검출법 (2Byte)
-![alt text](image-10.png)
+![alt text](resources/image-10.png)
 
 16진수 1의 보수는 15-N (1~9 A~F)
 
@@ -182,13 +182,13 @@
 
 3) **Selective-reject ARQ**   
  : 프레임을 계속 보내다가, NAK가 온 프레임만 재전송
- ![alt text](image-11.png)
+ ![alt text](resources/image-11.png)
 
 <div style="page-break-before: always;"></div>
 
 #### 전방향 오류 정정
  : 수신된 프레임만을 가지고 오류정정을 할 수 있는 방식  
- ![alt text](image-12.png)
+ ![alt text](resources/image-12.png)
 
  모든 패리티가 0이면 오류가 없는 것이고, 그렇지 않으면 오류가 발생한 것이다.  
  결과가 0101이면 오류가 있는 숫자이고, 이를 10진수로 변환하면 5 ( 0 + 4 + 0 + 1 )   
@@ -199,18 +199,18 @@
 
  1) Stop & Wait 흐름 제어 기법
   : 전송 프레임당 응답을 수신하는 흐름제어 기법  
-  ![alt text](image-13.png)
+  ![alt text](resources/image-13.png)
 
  2) Sliding Windows 흐름제어 기법
   : 응답없이 보낼 수 있는 프레임의 최대 개수를 채택함(범위 : 0 ~ 2ⁿ - 1)  
-  ![alt text](image-14.png)
+  ![alt text](resources/image-14.png)
 
  3) PiggyBacking 기법
   : 응답용 ACK 프레임을 별도로 전송하지 않고, 데이터 프레임에 응답을 같이 포함시켜 보내는 기법
- ![alt text](image-15.png)
+ ![alt text](resources/image-15.png)
 
 ### 문자프레임
-![alt text](image-16.png)
+![alt text](resources/image-16.png)
 
 #### 접근제어/링크제어관리
 
