@@ -233,3 +233,47 @@
 
 ### 비동기 응답모드 (Async Response Mode)
  - 주국만이 전체적인 전송개시를 담당
+ - 연결 설정후에는 주국의 폴링명령(승인) 없이도 종국이 데이터를 보낼 수 있음
+ - 전송개시는 NRM처럼 주/종 관계지만 데이터와 응답 전송은 자유로움
+
+### HDLC 프레임
+
+1) Flag
+ - 특정 비트패턴으로 프레임을 구분하며, 송신 스테시연이 추가
+ - 수신 스테이션이 지속적으로 Flag를 검출하며 플레임 동기화를 실현
+
+2) Address
+ - 가변크기
+ - Point-to-Point는 주소가 필요없어, 의미없는 데이터 1로 패딩하여 데이터를 송신함
+ - Multi-Point는 주소 마지막 Byte의 맨앞 '1'로 설정한다
+
+3) Control
+ - 정보 프레임 : 데이터를 전송할 때 사용하는 프레임
+ - 감독 프레임 : 링크설정, 링크해제 등 제어용 프레임
+ - 비번호 프레임 : 흐름제어와 오류제어용으로 사용하는 프레임  
+![alt text](resources/4_control_1.png)
+![alt text](resources/4_control_2.png)
+![alt text](resources/4_control_3.png)
+
+4) FCS
+ - 오류 검출을 위한 필드 (2 혹은 4 Bytes )
+ - 기본 다항식 16 bit CRC-CCITT 다항식 또는 32 비트 CRC-32
+ ![alt text](resources/4_fcs.png)
+
+
+ ### 네트워크 토폴로지
+ Readme : 6개 내용 테이블로 정리할 것!
+ ![alt text](image.png)
+
+ ### LAN 프로토콜 계층
+ - IEEE 표준 LAN에서 사용하는 데이터링크 프로토콜
+ - LAN에서는 데이터 링크 계층이 MAC 계층과 LLC 계층으로 분리되어 있음
+
+ ### LLC 계층
+ - HDLC 프로토콜과 유사한 기능을 제공
+ - 링크를 생성/관리 흐름제어 등 전송에 집중된 기능을 제공
+![alt text](image-1.png)
+
+
+### MAC 계층
+ - 접근제어, 오류 검출 집중된 기능을 제공
